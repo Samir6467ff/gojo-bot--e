@@ -1,7 +1,7 @@
-import {sticker} from '../lib/sticker.js';
-import uploadFile from '../lib/uploadFile.js';
-import uploadImage from '../lib/uploadImage.js';
-import {webp2png} from '../lib/webp2mp4.js';
+import {sticker} from 'src/libraries/simple.js';
+import uploadFile from 'src/libraries/uploadFile.js';
+import uploadImage from 'src/libraries/uploadImage.js';
+import {webp2png} from 'src/libraries/webp2mp4.js';
 
 
 
