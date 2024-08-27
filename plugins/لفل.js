@@ -1,4 +1,4 @@
-import { canLevelUp, xpRange } from '../lib/levelling.js'
+import { canLevelUp, xpRange } from 'src/libraries/levelling.js'
 
 let handler = async (m, { conn }) => {
 let { role } = global.db.data.users[m.sender]
