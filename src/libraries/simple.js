@@ -33,7 +33,7 @@ const {
     getAggregateVotesInPollMessage, 
     prepareWAMessageMedia,
     WA_DEFAULT_EPHEMERAL
-} = (await import('@whiskeysockets/baileys')).default
+} = (await import('baileys')).default
 
 export function makeWASocket(connectionOptions, options = {}) {
     /**
