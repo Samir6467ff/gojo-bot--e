@@ -3,7 +3,7 @@ import yts from 'yt-search';
 import ytdl from 'ytdl-core';
 import axios from 'axios';
 import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
-import { prepareWAMessageMedia, generateWAMessageFromContent } from '@whiskeysockets/baileys';
+import { prepareWAMessageMedia, generateWAMessageFromContent } from 'baileys';
 
 const handler = async (m, { command, usedPrefix, conn, args, text }) => {
   if (command === 'حمل') {
