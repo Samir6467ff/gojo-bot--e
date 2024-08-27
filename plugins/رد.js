@@ -17,12 +17,7 @@ await conn.sendMessage(m.chat, { react: { text: '💡', key: m.key } })
    }
     if (/^عمك$/i.test(m.text) ) { //sem prefixo 
      conn.reply(m.chat, `*غوجو ساترو؟💢💯*`, m) //wm, null, [['Menu', '#menu']], m) botones :V
-}
-    if (/^بوت$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, `*اسمي غوجو ياورع 😒*`, m) //wm, null, [['Menu', '#menu']], m) botones :V
-await conn.sendMessage(m.chat, { react: { text: '🗿', key: m.key } })
-}
-
+    }
  if (/^يابوت|يا بوت$/i.test(m.text) ) { //sem prefixo 
      conn.reply(m.chat, `*هممممم عاوز ايه انت كمان 🗿*`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
 await conn.sendMessage(m.chat, { react: { text: '🗿', key: m.key } })
