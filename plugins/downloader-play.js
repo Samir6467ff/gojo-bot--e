@@ -1,10 +1,10 @@
 import fetch from 'node-fetch';
 import axios from 'axios';
-import { youtubedl, youtubedlv2 } from '@bochilteam/scraper';
+import { youtubedl, youtubedlv2 } from '@StarlightsTeam/Scraper';
 import fs from "fs";
 import yts from 'yt-search';
-import ytmp33 from '../lib/ytmp33.js';
-import ytmp44 from '../lib/ytmp44.js';
+import ytmp33 from 'src/libraries/ytmp33.js';
+import ytmp44 from 'src/libraries/ytmp44.js';
 
 let limit1 = 100;
 let limit2 = 400;
@@ -12,13 +12,8 @@ let limit_a1 = 50;
 let limit_a2 = 400;
 
 const handler = async (m, { conn, command, args, text, usedPrefix }) => {
-  const datas = global;
-  const idioma = datas.db.data.users[m.sender].language;
-  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`));
-  const tradutor = _translate.plugins.descargas_play;
 
-  if (!text) throw `${tradutor.texto1[0]} _${usedPrefix + command} ${tradutor.texto1[1]}`;
-
+  if (!text) throw `_*< البحث-فديو🌺💡/>*_\n\n*[❗]*❄تحذير* هذا الامر يحتاج لرابط❄ *\n { 💡 } مثال:* _${usedPrefix + command} EDIT ANIME_`;
   const yt_play = await search(args.join(' '));
   let additionalText = '';
   if (command === 'اغنيه') {
@@ -27,8 +22,7 @@ const handler = async (m, { conn, command, args, text, usedPrefix }) => {
     additionalText = 'vídeo';
   }
 
-  const texto1 = `${tradutor.texto2[0]} ${yt_play[0].title}\n${tradutor.texto2[1]} ${yt_play[0].ago}\n${tradutor.texto2[2]} ${secondString(yt_play[0].duration.seconds)}\n${tradutor.texto2[3]} ${MilesNumber(yt_play[0].views)}\n${tradutor.texto2[4]} ${yt_play[0].author.name}\n${tradutor.texto2[5]} ${yt_play[0].videoId}\n${tradutor.texto2[6]} ${yt_play[0].type}\n${tradutor.texto2[7]} ${yt_play[0].url}\n${tradutor.texto2[8]} ${yt_play[0].author.url}\n\n> ${tradutor.texto2[9]} ${additionalText}. ${tradutor.texto2[10]}`.trim();
-
+    const texto1 = `_*< معلومات الفديو />*_\n\n ▢🏠 *عنوان:* ${yt_play[0].title}\n\n▢ *Publicado:* ${yt_play[0].ago}\n\n▢📜 *وصف الفديو:* ${secondString(yt_play[0].duration.seconds)}\n\n▢👁 *مشاهدات الفديو:* ${`${MilesNumber(yt_play[0].views)}`}\n\n▢ *Autor:* ${yt_play[0].author.name}\n\n▢ *عنوان الid:* ${yt_play[0].videoId}\n\n▢📚 الكتابه:* ${yt_play[0].type}\n\n▢ *وصولات:* ${yt_play[0].url}\n\n▢🧔🏻 *القناه* ${yt_play[0].author.url}\n\n*[ ℹ️ ] استني لو كنت بعتت ${additionalText}. انتظر الارسال*`.trim();
   conn.sendMessage(m.chat, { image: { url: yt_play[0].thumbnail }, caption: texto1 }, { quoted: m });
 
   if (command === 'اغنيه') {
@@ -77,8 +71,8 @@ const handler = async (m, { conn, command, args, text, usedPrefix }) => {
           return;
         }
       } catch {
-        throw tradutor.texto4;
-      }
+     throw '_*< االبحث-ففديوه>*_\n\n*[ 𝐆𝐎𝐉𝐎⚡𝐁𝐎𝐓 ] حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق.*';    
+            }
     }
   }
 
@@ -128,7 +122,7 @@ const handler = async (m, { conn, command, args, text, usedPrefix }) => {
           return;
         }
       } catch {
-        throw tradutor.texto6;
+    throw '_*< التنزيلات - تشغيل />*_\n\n*[ ] حدث خطأ. يرجى المحاولة مرة أخرى في وقت لاحق.*';
       }
     }
   }
