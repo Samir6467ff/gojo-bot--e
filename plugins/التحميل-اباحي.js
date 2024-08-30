@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { prepareWAMessageMedia, generateWAMessageFromContent } from '@whiskeysockets/baileys';
+import { prepareWAMessageMedia, generateWAMessageFromContent } from 'baileys';
 import cheerio from 'cheerio';
 
 const handler = async (m, { text, conn, isOwner, args, command, usedPrefix }) => {
@@ -70,7 +70,7 @@ let fakecontact = { 'key': { 'participants': '0@s.whatsapp.net', 'remoteJid': 's
         message: {
           interactiveMessage: {
             body: { text: caption },
-            footer: { text: '𝐒𝐇𝐀𝐖𝐀𝐙𝐀-𝐁𝐎𝐓' },
+            footer: { text: '𝐆𝐎𝐉𝐎⚡𝐁𝐎𝐓' },
             header: {
               hasMediaAttachment: true,
               imageMessage: messa.imageMessage,
@@ -137,6 +137,7 @@ let xnxxLink = args[0];
 
 handler.help = ['xns'].map((v) => v + ' <query>');
 handler.tags = ['downloader', 'premium'];
+handler.owner = true;
 handler.command = /^(xns|سكس|تحميل-سكس|xnd)$/i;
 
 export default handler;
