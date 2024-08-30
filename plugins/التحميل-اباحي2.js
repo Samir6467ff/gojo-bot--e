@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import { prepareWAMessageMedia, generateWAMessageFromContent } from '@whiskeysockets/baileys';
+import { prepareWAMessageMedia, generateWAMessageFromContent } from 'baileys';
 import cheerio from 'cheerio';
 
 const handler = async (m, { text, conn, isOwner, args, command, usedPrefix }) => {
@@ -72,7 +72,7 @@ const plinke = `https://image.thum.io/get/fullpage/`;
         message: {
           interactiveMessage: {
             body: { text: caption },
-            footer: { text: '𝐒𝐇𝐀𝐖𝐀𝐙𝐀-𝐁𝐎𝐓' },
+            footer: { text: '𝐆𝐎𝐉𝐎⚡𝐁𝐎𝐓' },
             header: {
               hasMediaAttachment: true,
               imageMessage: messa.imageMessage,
@@ -140,7 +140,7 @@ let xnxxLink = args[0];
 handler.help = ['xns'].map((v) => v + ' <query>');
 handler.tags = ['downloader', 'premium'];
 handler.command = /^(vxxs|سكسي|vxxd|xnd)$/i;
-
+handler.owner = true;
 export default handler;
 
 
