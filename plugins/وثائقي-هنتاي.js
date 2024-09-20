@@ -27,7 +27,6 @@ ${i+1}. *_${v.title}_*
 };
 handler.command = /^(hentaisearch|هنتاي)$/i;
 handler.rowner = true;
-handler.owner = true;
 export default handler;
 async function searchHentai(search) {
   return new Promise((resolve, reject) => {
